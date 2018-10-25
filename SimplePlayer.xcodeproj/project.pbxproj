@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145325504EC3CD879D9DA937 /* Pods_SimplePlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AE1F964342FFD648BBB1A1 /* Pods_SimplePlayerUITests.framework */; };
+		397820AAB6F8181E3DAE9686 /* Pods_SimplePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD73D26EA60595CC36E946D2 /* Pods_SimplePlayer.framework */; };
 		63D01C0C217F1B6800D8345C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D01C0B217F1B6800D8345C /* AppDelegate.swift */; };
 		63D01C0E217F1B6800D8345C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D01C0D217F1B6800D8345C /* ViewController.swift */; };
 		63D01C11217F1B6800D8345C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D01C0F217F1B6800D8345C /* Main.storyboard */; };
@@ -14,6 +16,15 @@
 		63D01C16217F1B6900D8345C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D01C14217F1B6900D8345C /* LaunchScreen.storyboard */; };
 		63D01C21217F1B6900D8345C /* SimplePlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D01C20217F1B6900D8345C /* SimplePlayerTests.swift */; };
 		63D01C2C217F1B6900D8345C /* SimplePlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D01C2B217F1B6900D8345C /* SimplePlayerUITests.swift */; };
+		63DC3D95218191ED00C81571 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC3D93218191ED00C81571 /* CustomCell.swift */; };
+		63DC3D96218191ED00C81571 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC3D94218191ED00C81571 /* CustomCell.xib */; };
+		63DC3D982181AAA800C81571 /* 黒子.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 63DC3D972181AAA800C81571 /* 黒子.JPG */; };
+		63DC3D9A2181E62F00C81571 /* SelectThumbnailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC3D992181E62F00C81571 /* SelectThumbnailViewController.swift */; };
+		63DC3D9D2181EDDD00C81571 /* SelectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC3D9B2181EDDD00C81571 /* SelectImageCell.swift */; };
+		63DC3D9E2181EDDD00C81571 /* SelectImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC3D9C2181EDDD00C81571 /* SelectImageCell.xib */; };
+		63DC3DA12181EE8D00C81571 /* SelectColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC3D9F2181EE8D00C81571 /* SelectColorCell.swift */; };
+		63DC3DA22181EE8D00C81571 /* SelectColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC3DA02181EE8D00C81571 /* SelectColorCell.xib */; };
+		AABFB4C33EAA19EBE7AB3AEA /* Pods_SimplePlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E646FA3A87A8BD0270C5186F /* Pods_SimplePlayerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +58,24 @@
 		63D01C27217F1B6900D8345C /* SimplePlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplePlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D01C2B217F1B6900D8345C /* SimplePlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePlayerUITests.swift; sourceTree = "<group>"; };
 		63D01C2D217F1B6900D8345C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DC3D93218191ED00C81571 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		63DC3D94218191ED00C81571 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		63DC3D972181AAA800C81571 /* 黒子.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "黒子.JPG"; sourceTree = "<group>"; };
+		63DC3D992181E62F00C81571 /* SelectThumbnailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThumbnailViewController.swift; sourceTree = "<group>"; };
+		63DC3D9B2181EDDD00C81571 /* SelectImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageCell.swift; sourceTree = "<group>"; };
+		63DC3D9C2181EDDD00C81571 /* SelectImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectImageCell.xib; sourceTree = "<group>"; };
+		63DC3D9F2181EE8D00C81571 /* SelectColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorCell.swift; sourceTree = "<group>"; };
+		63DC3DA02181EE8D00C81571 /* SelectColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorCell.xib; sourceTree = "<group>"; };
+		63DC3DA32182073900C81571 /* SimplePlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimplePlayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		7B8F889AFF554ABC2590CE49 /* Pods-SimplePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayer/Pods-SimplePlayer.release.xcconfig"; sourceTree = "<group>"; };
+		96C4C17F2650C16D851F12A7 /* Pods-SimplePlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayerUITests/Pods-SimplePlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B6233ED81429EEEBF5B1BFE /* Pods-SimplePlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayerTests/Pods-SimplePlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A85433AF35494B54BBCE223D /* Pods-SimplePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayer/Pods-SimplePlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		CA95598449F2B2918E789DE5 /* Pods-SimplePlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayerUITests/Pods-SimplePlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CD73D26EA60595CC36E946D2 /* Pods_SimplePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AE1F964342FFD648BBB1A1 /* Pods_SimplePlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D32E5F913A8AC7FF8430D98B /* Pods-SimplePlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayerTests/Pods-SimplePlayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		E646FA3A87A8BD0270C5186F /* Pods_SimplePlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397820AAB6F8181E3DAE9686 /* Pods_SimplePlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABFB4C33EAA19EBE7AB3AEA /* Pods_SimplePlayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +99,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145325504EC3CD879D9DA937 /* Pods_SimplePlayerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6321AF876AF21BED07DB97A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A85433AF35494B54BBCE223D /* Pods-SimplePlayer.debug.xcconfig */,
+				7B8F889AFF554ABC2590CE49 /* Pods-SimplePlayer.release.xcconfig */,
+				9B6233ED81429EEEBF5B1BFE /* Pods-SimplePlayerTests.debug.xcconfig */,
+				D32E5F913A8AC7FF8430D98B /* Pods-SimplePlayerTests.release.xcconfig */,
+				96C4C17F2650C16D851F12A7 /* Pods-SimplePlayerUITests.debug.xcconfig */,
+				CA95598449F2B2918E789DE5 /* Pods-SimplePlayerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		63D01BFF217F1B6800D8345C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +126,9 @@
 				63D01C1F217F1B6900D8345C /* SimplePlayerTests */,
 				63D01C2A217F1B6900D8345C /* SimplePlayerUITests */,
 				63D01C09217F1B6800D8345C /* Products */,
+				6321AF876AF21BED07DB97A0 /* Pods */,
+				6EF6E8ED6B0943A9796BA7DA /* Frameworks */,
+				63DC3DA32182073900C81571 /* SimplePlayer-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +147,18 @@
 			children = (
 				63D01C0B217F1B6800D8345C /* AppDelegate.swift */,
 				63D01C0D217F1B6800D8345C /* ViewController.swift */,
+				63DC3D972181AAA800C81571 /* 黒子.JPG */,
 				63D01C0F217F1B6800D8345C /* Main.storyboard */,
+				63DC3D992181E62F00C81571 /* SelectThumbnailViewController.swift */,
 				63D01C12217F1B6900D8345C /* Assets.xcassets */,
 				63D01C14217F1B6900D8345C /* LaunchScreen.storyboard */,
 				63D01C17217F1B6900D8345C /* Info.plist */,
+				63DC3D93218191ED00C81571 /* CustomCell.swift */,
+				63DC3D94218191ED00C81571 /* CustomCell.xib */,
+				63DC3D9B2181EDDD00C81571 /* SelectImageCell.swift */,
+				63DC3D9C2181EDDD00C81571 /* SelectImageCell.xib */,
+				63DC3D9F2181EE8D00C81571 /* SelectColorCell.swift */,
+				63DC3DA02181EE8D00C81571 /* SelectColorCell.xib */,
 			);
 			path = SimplePlayer;
 			sourceTree = "<group>";
@@ -125,6 +181,16 @@
 			path = SimplePlayerUITests;
 			sourceTree = "<group>";
 		};
+		6EF6E8ED6B0943A9796BA7DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD73D26EA60595CC36E946D2 /* Pods_SimplePlayer.framework */,
+				E646FA3A87A8BD0270C5186F /* Pods_SimplePlayerTests.framework */,
+				D2AE1F964342FFD648BBB1A1 /* Pods_SimplePlayerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D01C30217F1B6900D8345C /* Build configuration list for PBXNativeTarget "SimplePlayer" */;
 			buildPhases = (
+				3EDF53526B07A1D579E632F1 /* [CP] Check Pods Manifest.lock */,
 				63D01C04217F1B6800D8345C /* Sources */,
 				63D01C05217F1B6800D8345C /* Frameworks */,
 				63D01C06217F1B6800D8345C /* Resources */,
+				DAFABCE8B21D407F168DF1A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D01C33217F1B6900D8345C /* Build configuration list for PBXNativeTarget "SimplePlayerTests" */;
 			buildPhases = (
+				ADB378032240A56CD27B6087 /* [CP] Check Pods Manifest.lock */,
 				63D01C18217F1B6900D8345C /* Sources */,
 				63D01C19217F1B6900D8345C /* Frameworks */,
 				63D01C1A217F1B6900D8345C /* Resources */,
@@ -167,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D01C36217F1B6900D8345C /* Build configuration list for PBXNativeTarget "SimplePlayerUITests" */;
 			buildPhases = (
+				7A40EA79CC7D6BCC082CA84F /* [CP] Check Pods Manifest.lock */,
 				63D01C23217F1B6900D8345C /* Sources */,
 				63D01C24217F1B6900D8345C /* Frameworks */,
 				63D01C25217F1B6900D8345C /* Resources */,
@@ -193,6 +263,12 @@
 				TargetAttributes = {
 					63D01C07217F1B6800D8345C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					63D01C1B217F1B6900D8345C = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -229,9 +305,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DC3D982181AAA800C81571 /* 黒子.JPG in Resources */,
 				63D01C16217F1B6900D8345C /* LaunchScreen.storyboard in Resources */,
 				63D01C13217F1B6900D8345C /* Assets.xcassets in Resources */,
+				63DC3D96218191ED00C81571 /* CustomCell.xib in Resources */,
+				63DC3DA22181EE8D00C81571 /* SelectColorCell.xib in Resources */,
 				63D01C11217F1B6800D8345C /* Main.storyboard in Resources */,
+				63DC3D9E2181EDDD00C81571 /* SelectImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +331,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EDF53526B07A1D579E632F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimplePlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A40EA79CC7D6BCC082CA84F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimplePlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADB378032240A56CD27B6087 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimplePlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAFABCE8B21D407F168DF1A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimplePlayer/Pods-SimplePlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Color-Picker-for-iOS/Color_Picker_for_iOS.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Color_Picker_for_iOS.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimplePlayer/Pods-SimplePlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63D01C04217F1B6800D8345C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				63D01C0E217F1B6800D8345C /* ViewController.swift in Sources */,
+				63DC3DA12181EE8D00C81571 /* SelectColorCell.swift in Sources */,
+				63DC3D9A2181E62F00C81571 /* SelectThumbnailViewController.swift in Sources */,
+				63DC3D95218191ED00C81571 /* CustomCell.swift in Sources */,
 				63D01C0C217F1B6800D8345C /* AppDelegate.swift in Sources */,
+				63DC3D9D2181EDDD00C81571 /* SelectImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,8 +603,10 @@
 		};
 		63D01C31217F1B6900D8345C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A85433AF35494B54BBCE223D /* Pods-SimplePlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FEUJUQKYYF;
 				INFOPLIST_FILE = SimplePlayer/Info.plist;
@@ -439,6 +616,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umeneri-yuuki.SimplePlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimplePlayer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,8 +625,10 @@
 		};
 		63D01C32217F1B6900D8345C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B8F889AFF554ABC2590CE49 /* Pods-SimplePlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FEUJUQKYYF;
 				INFOPLIST_FILE = SimplePlayer/Info.plist;
@@ -457,6 +638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umeneri-yuuki.SimplePlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimplePlayer-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,6 +646,7 @@
 		};
 		63D01C34217F1B6900D8345C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B6233ED81429EEEBF5B1BFE /* Pods-SimplePlayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +668,7 @@
 		};
 		63D01C35217F1B6900D8345C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D32E5F913A8AC7FF8430D98B /* Pods-SimplePlayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +690,7 @@
 		};
 		63D01C37217F1B6900D8345C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96C4C17F2650C16D851F12A7 /* Pods-SimplePlayerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +711,7 @@
 		};
 		63D01C38217F1B6900D8345C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA95598449F2B2918E789DE5 /* Pods-SimplePlayerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
