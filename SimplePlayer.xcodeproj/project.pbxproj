@@ -24,6 +24,7 @@
 		63DC3D9E2181EDDD00C81571 /* SelectImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC3D9C2181EDDD00C81571 /* SelectImageCell.xib */; };
 		63DC3DA12181EE8D00C81571 /* SelectColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC3D9F2181EE8D00C81571 /* SelectColorCell.swift */; };
 		63DC3DA22181EE8D00C81571 /* SelectColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC3DA02181EE8D00C81571 /* SelectColorCell.xib */; };
+		63F0A79F2182DC2B00C45776 /* SelectPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0A79E2182DC2B00C45776 /* SelectPlaylistViewController.swift */; };
 		AABFB4C33EAA19EBE7AB3AEA /* Pods_SimplePlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E646FA3A87A8BD0270C5186F /* Pods_SimplePlayerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		63DC3D9F2181EE8D00C81571 /* SelectColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorCell.swift; sourceTree = "<group>"; };
 		63DC3DA02181EE8D00C81571 /* SelectColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorCell.xib; sourceTree = "<group>"; };
 		63DC3DA32182073900C81571 /* SimplePlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimplePlayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		63F0A79E2182DC2B00C45776 /* SelectPlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlaylistViewController.swift; sourceTree = "<group>"; };
 		7B8F889AFF554ABC2590CE49 /* Pods-SimplePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayer/Pods-SimplePlayer.release.xcconfig"; sourceTree = "<group>"; };
 		96C4C17F2650C16D851F12A7 /* Pods-SimplePlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayerUITests/Pods-SimplePlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6233ED81429EEEBF5B1BFE /* Pods-SimplePlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplePlayerTests/Pods-SimplePlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				63D01C0B217F1B6800D8345C /* AppDelegate.swift */,
 				63D01C0D217F1B6800D8345C /* ViewController.swift */,
+				63F0A79E2182DC2B00C45776 /* SelectPlaylistViewController.swift */,
 				63DC3D972181AAA800C81571 /* 黒子.JPG */,
 				63D01C0F217F1B6800D8345C /* Main.storyboard */,
 				63DC3D992181E62F00C81571 /* SelectThumbnailViewController.swift */,
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D01C0E217F1B6800D8345C /* ViewController.swift in Sources */,
+				63F0A79F2182DC2B00C45776 /* SelectPlaylistViewController.swift in Sources */,
 				63DC3DA12181EE8D00C81571 /* SelectColorCell.swift in Sources */,
 				63DC3D9A2181E62F00C81571 /* SelectThumbnailViewController.swift in Sources */,
 				63DC3D95218191ED00C81571 /* CustomCell.swift in Sources */,

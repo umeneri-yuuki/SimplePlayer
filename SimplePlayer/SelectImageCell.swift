@@ -8,17 +8,19 @@
 
 import UIKit
 
-class SelectImageCell: UITableViewCell {
 
+class SelectImageCell: UITableViewCell ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+            super.setSelected(selected, animated: animated)
     }
+
     
 }

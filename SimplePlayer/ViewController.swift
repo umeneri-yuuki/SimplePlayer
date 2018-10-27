@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    //セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionnum
     }
@@ -57,6 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
+    //セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return ""
         
