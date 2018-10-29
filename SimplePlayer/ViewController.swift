@@ -23,6 +23,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TableView.dataSource = self
         
         TableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "mycell")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
 
@@ -75,16 +81,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.section == sectionnum - 2){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addcell", for: indexPath)
+            cell.contentView.backgroundColor = UIColor.clear
+            return cell
+        }else{
          let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath) as! CustomCell
-           cell.cellimage()
-
+            cell.cellimage()
             cell.contentView.backgroundColor = UIColor.yellow
+         return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-
+        if(indexPath.section == sectionnum - 2){
+            
+            return 50
+        }else{
+            
+            return 150
+        }
         
-        return cell
     }
 
+    @IBAction func NewPlaylist(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSelectThumbnail", sender: self)
+    }
+    
 
 
 }

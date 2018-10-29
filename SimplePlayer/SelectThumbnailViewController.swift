@@ -25,6 +25,15 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
         TableView.delegate = self
         TableView.dataSource = self
         
+        //ナビゲーションバーのボタンを作る
+        let finishbutton :UIBarButtonItem = UIBarButtonItem(title:"完了", style: .plain, target: self, action: #selector(self.done))
+        self.navigationItem.setRightBarButton(finishbutton, animated: true)
+        
+        let cancelbutton :UIBarButtonItem = UIBarButtonItem(title:"キャンセル", style: .plain, target: self, action: #selector(self.back))
+        self.navigationItem.setLeftBarButton(cancelbutton, animated: true)
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +41,14 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
 
         self.TableView.reloadData()
         
+    }
+    
+    @objc func done(){
+         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     //サムネイル画像の選択ボタン
