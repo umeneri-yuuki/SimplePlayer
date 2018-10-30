@@ -11,11 +11,14 @@ import UIKit
 class SelectThumbnailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     var selectplaylist = (name:"",ID:"")
+    
 
     @IBOutlet weak var TableView: UITableView!
     
     
-    var thumbnailpicture: UIImage!
+    var thumbnailpicture: UIImage? = UIImage(named:"noimage")
+    
+    var thumbnailcolor: UIColor!
     
     var thumbnail = 0
     
@@ -32,6 +35,8 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
         let cancelbutton :UIBarButtonItem = UIBarButtonItem(title:"キャンセル", style: .plain, target: self, action: #selector(self.back))
         self.navigationItem.setLeftBarButton(cancelbutton, animated: true)
         
+        thumbnailcolor = UIColor.green
+        
         
         
     }
@@ -44,7 +49,15 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
     }
     
     @objc func done(){
+        
+        //前画面に値を渡す
+      // let nc = self.presentingViewController as!
+        let VC = self.presentingViewController as! ViewController
+        VC.myplaylist.append((ID: selectplaylist.ID,thumbnail: thumbnail,thumbnailcolor:thumbnailcolor,thumbnailpicture:thumbnailpicture))
+        
          self.dismiss(animated: true, completion: nil)
+ 
+      
     }
     
     @objc func back(){
@@ -172,6 +185,7 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
     
     @objc func colorChanged(sender: HRColorPickerView) {
         // 色が変更された時に来る
+        thumbnailcolor = sender.color
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

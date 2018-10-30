@@ -24,27 +24,37 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-1a-WFC">
-                        <rect key="frame" x="0.0" y="0.0" width="46" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="前の曲"/>
+                        <connections>
+                            <action selector="backsong:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xlt-em-njZ"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE9-gg-qGq">
-                        <rect key="frame" x="329" y="0.0" width="46" height="150"/>
+                        <rect key="frame" x="285" y="0.0" width="90" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="次の曲"/>
+                        <connections>
+                            <action selector="nextsong:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eyl-7o-M2B"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cc-n9-Ywf">
-                        <rect key="frame" x="54" y="0.0" width="267" height="150"/>
+                        <rect key="frame" x="98" y="0.0" width="179" height="151"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="スタート&amp;ストップ"/>
+                        <connections>
+                            <action selector="startstop:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ne4-8r-7iq"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="PlayListImage" destination="uXh-Z3-F4E" id="XKl-0a-fg6"/>
             </connections>
-            <point key="canvasLocation" x="103.2" y="65.667166416791616"/>
+            <point key="canvasLocation" x="-47.200000000000003" y="38.680659670164921"/>
         </tableViewCell>
     </objects>
 </document>

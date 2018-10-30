@@ -11,6 +11,8 @@ import UIKit
 class CustomCell: UITableViewCell {
 
     @IBOutlet weak var PlayListImage: UIImageView!
+ 
+    var playlistID = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,9 +24,29 @@ class CustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func cellimage(){
-        self.PlayListImage.image = UIImage(named: "黒子.JPG")
+    func cellimage(image:UIImage){
+        self.PlayListImage.image = image
     }
+    
+    @IBAction func startstop(_ sender: Any) {
+   
+        let VC = ((superview as! UITableView).delegate as! ViewController)
+        VC.startstop(ID: playlistID)
+    }
+    
+    @IBAction func nextsong(_ sender: Any) {
+
+        let VC = ((superview as! UITableView).delegate as! ViewController)
+        VC.nextsong(ID: playlistID)
+    }
+    
+    @IBAction func backsong(_ sender: Any) {
+
+        let VC = ((superview as! UITableView).delegate as! ViewController)
+        VC.backsong(ID: playlistID)
+    }
+    
+    
     
     
     
