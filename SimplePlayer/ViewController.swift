@@ -18,12 +18,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var myplaylist: [(ID: String,thumbnail: Int,thumbnailcolor: UIColor?,thumbnailpicture: UIImage?)] = []
     
     var nowplaylist = ""
-    
-    let sectionnum = 10
-    
+
+    var nowsellID = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+       // appDelegate.viewController = self
+        
         self.view.backgroundColor = UIColor.black
         self.TableView.backgroundColor = UIColor.clear
         TableView.delegate = self
@@ -31,7 +34,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         TableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "mycell")
         
-        player = MPMusicPlayerController.systemMusicPlayer
+        player = MPMusicPlayerController.applicationQueuePlayer
+        
+    //    player = MPMusicPlayerController.systemMusicPlayer
         
         player.repeatMode = .all
         player.shuffleMode = .songs
@@ -102,6 +107,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }else{
          let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath) as! CustomCell
             cell.playlistID = myplaylist[indexPath.section].ID
+          //  cell.sellID = UIDevice.current.identifierForVendor!.uuidString
+
             if(myplaylist.count != 0){
                 if(myplaylist[indexPath.section].thumbnail==0){
                     cell.contentView.backgroundColor = myplaylist[indexPath.section].thumbnailcolor
@@ -129,13 +136,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.performSegue(withIdentifier: "toSelectThumbnail", sender: self)
     }
     
-    func setPlaylist(ID: String) -> Bool{
+    /*
+    func storeNowPlaylist(){
+       // nowplaylist = ""
+    }
+ */
+    
+    func setPlaylist(ID: String,sellID: String) -> Bool{
         
-        if(ID != nowplaylist){
+        if(ID != nowplaylist || sellID != nowsellID){
             
             player.stop()
             
             nowplaylist = ID
+            
+            nowsellID = sellID
         
             let query = MPMediaQuery.playlists()
             query.addFilterPredicate(MPMediaPropertyPredicate(value: false, forProperty: MPMediaItemPropertyIsCloudItem))
@@ -159,41 +174,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    func startstop(ID: String){
+    func startstop(ID: String,sellID: String){
         
-        print("start:\(ID)")
+        print("start:\(ID) cellID:\(sellID)")
         
-        if(setPlaylist(ID: ID) == true){
+        
+        if(setPlaylist(ID: ID ,sellID: sellID) == true){
             let playStatus = player.playbackState
             if (playStatus == .playing) {
                 player.pause()
             }else if (playStatus == .paused){
-                player.play()
+                 player.play()
             }
         }else{
             player.play()
         }
     }
     
-    func nextsong(ID: String){
-         print("next:\(ID)")
+    func nextsong(ID: String,sellID: String){
+         print("next:\(ID) secNum:\(sellID)")
         
-        if(setPlaylist(ID: ID) == true){
+        
+        if(setPlaylist(ID: ID, sellID: sellID) == true){
             player.skipToNextItem()
+            player.play()
         }else{
             player.play()
         }
     }
     
-    func backsong(ID: String){
-         print("back:\(ID)")
+    func backsong(ID: String,sellID: String){
+         print("back:\(ID) secNum:\(sellID)")
         
-        if(setPlaylist(ID: ID) == true){
+        if(setPlaylist(ID: ID ,sellID: sellID) == true){
             player.skipToPreviousItem()
+            player.play()
         }else{
             player.play()
         }
     }
+    
+
     
     
 

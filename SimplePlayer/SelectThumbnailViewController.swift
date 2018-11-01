@@ -52,10 +52,24 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
         
         //前画面に値を渡す
       // let nc = self.presentingViewController as!
-        let VC = self.presentingViewController as! ViewController
-        VC.myplaylist.append((ID: selectplaylist.ID,thumbnail: thumbnail,thumbnailcolor:thumbnailcolor,thumbnailpicture:thumbnailpicture))
-        
-         self.dismiss(animated: true, completion: nil)
+        if(selectplaylist.ID == ""){
+            
+            let alertView = UIAlertController(title: "失敗しました", message: "プレイリストが設定されていません", preferredStyle: UIAlertControllerStyle.alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertView, animated: true, completion: nil)
+            
+        }else if(thumbnail==1 && thumbnailpicture == nil){
+            let alertView = UIAlertController(title: "失敗しました", message: "画像が設定されていません", preferredStyle: UIAlertControllerStyle.alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertView, animated: true, completion: nil)
+            
+            
+        }else{
+            let VC = self.presentingViewController as! ViewController
+            VC.myplaylist.append((ID: selectplaylist.ID,thumbnail: thumbnail,thumbnailcolor:thumbnailcolor,thumbnailpicture:thumbnailpicture))
+            
+             self.dismiss(animated: true, completion: nil)
+        }
  
       
     }
@@ -169,7 +183,7 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
                     ColorSelectView2.layer.position = CGPoint(x: cell.contentView.frame.width/2, y:cell.contentView.frame.height/2)
                     
                     let view = HRColorPickerView(frame: ColorSelectView2.bounds)
-                    view.color = UIColor.green
+                    view.color = thumbnailcolor
                     view.addTarget(self,
                                    action: #selector(self.colorChanged(sender:)),
                                    for: .valueChanged)

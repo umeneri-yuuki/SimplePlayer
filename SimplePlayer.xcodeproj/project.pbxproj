@@ -149,10 +149,10 @@
 			children = (
 				63D01C0B217F1B6800D8345C /* AppDelegate.swift */,
 				63D01C0D217F1B6800D8345C /* ViewController.swift */,
+				63DC3D992181E62F00C81571 /* SelectThumbnailViewController.swift */,
 				63F0A79E2182DC2B00C45776 /* SelectPlaylistViewController.swift */,
 				63DC3D972181AAA800C81571 /* 黒子.JPG */,
 				63D01C0F217F1B6800D8345C /* Main.storyboard */,
-				63DC3D992181E62F00C81571 /* SelectThumbnailViewController.swift */,
 				63D01C12217F1B6900D8345C /* Assets.xcassets */,
 				63D01C14217F1B6900D8345C /* LaunchScreen.storyboard */,
 				63D01C17217F1B6900D8345C /* Info.plist */,
