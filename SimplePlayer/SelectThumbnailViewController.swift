@@ -8,13 +8,18 @@
 
 import UIKit
 
-class SelectThumbnailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class SelectThumbnailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate{
     
     var selectplaylist = (name:"",ID:"")
     
 
     @IBOutlet weak var TableView: UITableView!
     
+    var thispicture :UIScrollView!
+    
+    var selectimageindexpath: IndexPath!
+
+    var selectmode = false
     
     var thumbnailpicture: UIImage? = UIImage(named:"noimage")
     
@@ -22,11 +27,20 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
     
     var thumbnail = 0
     
+    var sellID = ""
+    
+    var selectrownum = -1
+    
+    var selectimageoffset = CGPoint(x: 0, y: 0)
+    
+    var selectimageoffsetheight = CGFloat(0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         TableView.delegate = self
         TableView.dataSource = self
+        
         
         //ナビゲーションバーのボタンを作る
         let finishbutton :UIBarButtonItem = UIBarButtonItem(title:"完了", style: .plain, target: self, action: #selector(self.done))
@@ -35,7 +49,9 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
         let cancelbutton :UIBarButtonItem = UIBarButtonItem(title:"キャンセル", style: .plain, target: self, action: #selector(self.back))
         self.navigationItem.setLeftBarButton(cancelbutton, animated: true)
         
+        if(thumbnail == 1 || selectmode == false){
         thumbnailcolor = UIColor.green
+        }
         
         
         
@@ -65,8 +81,28 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
             
             
         }else{
-            let VC = self.presentingViewController as! ViewController
-            VC.myplaylist.append((ID: selectplaylist.ID,thumbnail: thumbnail,thumbnailcolor:thumbnailcolor,thumbnailpicture:thumbnailpicture))
+            
+            
+           // let cell = TableView.dequeueReusableCell(withIdentifier: "selectcell", for: selectimageindexpath)
+           // let thispicture = cell.viewWithTag(1) as! UIScrollView
+            
+            
+           // let selectpicture = UIImageView(frame: CGRect(x: 0, y: 0, width: 375, height: 150))
+           // selectpicture.image = thumbnailpicture
+           // selectpicture.contentMode = .redraw
+          //  selectpicture.
+            
+           // let resizewidth = thispicture.frame.width
+           // let resizeimage = thumbnailpicture!.resized(toWidth: resizewidth)
+            let selectpicture = thumbnailpicture?.resize(size: selectimageoffset)
+            
+            let nav = self.presentingViewController as! UINavigationController
+            let VC = nav.topViewController  as! ViewController
+            if(selectmode == false){
+            VC.myplaylist.append((ID: selectplaylist.ID,name:selectplaylist.name,sellID: NSUUID().uuidString ,thumbnail: thumbnail,thumbnailcolor:thumbnailcolor,thumbnailpicture:selectpicture,fullsizepicture:thumbnailpicture,pictureoffsetheight: selectimageoffset.y))
+            }else{
+                VC.myplaylist[selectrownum] = (ID: selectplaylist.ID,name:selectplaylist.name,sellID: NSUUID().uuidString ,thumbnail: thumbnail,thumbnailcolor:thumbnailcolor,thumbnailpicture:selectpicture,fullsizepicture:thumbnailpicture,pictureoffsetheight: selectimageoffset.y)
+            }
             
              self.dismiss(animated: true, completion: nil)
         }
@@ -92,12 +128,16 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
             thumbnailpicture = image
          }
         self.TableView.reloadData()
+        
+         selectimageoffset = CGPoint(x: 0, y: 0)
+        
         self.dismiss(animated: true, completion: nil)
         
     }
     
-    //画像の選択をきキャンセルしたとき
+    //画像の選択をキャンセルしたとき
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -157,23 +197,46 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
         if(indexPath.section == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "playlistcell", for: indexPath)
             let playlisttext = cell.viewWithTag(1) as! UILabel
-            if(selectplaylist.name == ""){
-                playlisttext.text = "選択されていません"
-            }else{
-                playlisttext.text = selectplaylist.name
-            }
+           
+    
+                if(selectplaylist.name == ""){
+                    playlisttext.text = "選択されていません"
+                }else{
+                    playlisttext.text = selectplaylist.name
+                }
+  
             return cell
         }else{
             if(indexPath.row == 0){
                 let cell = tableView.dequeueReusableCell(withIdentifier: "thumbnailselect", for: indexPath)
+                let segmentbutton = cell.viewWithTag(1) as? UISegmentedControl
+                segmentbutton?.selectedSegmentIndex = thumbnail
                 
                 return cell
             }else{
                 if(thumbnail == 1){
                     //画像
                     let cell = tableView.dequeueReusableCell(withIdentifier: "selectcell", for: indexPath)
-                    let thispicture = cell.viewWithTag(1) as! UIImageView
-                    thispicture.image = thumbnailpicture
+                    selectimageindexpath = indexPath
+                    
+                    if let thumbnailpicture = thumbnailpicture {
+                        thispicture = cell.viewWithTag(1) as? UIScrollView
+                        thispicture.delegate = self
+                        let resizewidth = thispicture.frame.width
+                        let resizeimage = thumbnailpicture.resized(toWidth: resizewidth)
+                        let selectimage = UIImageView(image: resizeimage)
+                        
+                        selectimage.contentMode = UIViewContentMode.scaleAspectFill
+                        if(selectimageoffsetheight > -1){
+                        selectimageoffset.y = selectimageoffsetheight
+                        selectimageoffsetheight = CGFloat(-10)
+                        }
+                        thispicture.contentOffset = selectimageoffset
+                        thispicture.addSubview(selectimage)
+                        thispicture.contentSize = selectimage.frame.size
+                        cell.contentView.addSubview(thispicture)
+                    }
+                    
                     return cell
                 }else{
                     //色
@@ -195,6 +258,10 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
             }
         }
       
+    }
+    
+    @objc func imageChaged(sende: UIScrollView){
+        
     }
     
     @objc func colorChanged(sender: HRColorPickerView) {
@@ -227,6 +294,38 @@ class SelectThumbnailViewController: UIViewController , UITableViewDataSource, U
             print("")
         }
     }
-  
-
+    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+      func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset)
+        selectimageoffset = scrollView.contentOffset
+    }
+    
+    
 }
+
+extension UIImage {
+    func resized(toWidth width: CGFloat) -> UIImage? {
+        let resizedSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0) // 変更
+        draw(in: CGRect(origin: .zero, size: resizedSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizedImage
+    }
+    
+    func resize(size offset: CGPoint) -> UIImage? {
+        let width:CGFloat = 375
+        let resizedSize = CGSize(width: 375, height: 150)
+        let contentSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0) // 変更
+        let thisoffset = CGPoint(x: (offset.x)*15/14, y: -(offset.y)*15/14)
+        draw(in: CGRect(origin: thisoffset, size: contentSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizedImage
+    }
+}
+
